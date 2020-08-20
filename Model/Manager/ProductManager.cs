@@ -363,14 +363,7 @@ namespace Model.Manager
         {
             using (EcommerceEntities entities = new EcommerceEntities())
             {
-                if (entities.Product_Attribute.Any(entry => entry.OptionID == optionID && entry.ProductID == productId))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+               return entities.Product_Attribute.Any(entry => entry.OptionID == optionID && entry.ProductID == productId);
             }
         }
 
@@ -379,14 +372,7 @@ namespace Model.Manager
         {
             using (EcommerceEntities entities = new EcommerceEntities())
             {
-                if(entities.Products.Any(entry => entry.Name == product.Name && entry.ProductCateogoryID == product.ProductCateogoryID))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+               return entities.Products.Any(entry => entry.Name == product.Name && entry.ProductCateogoryID == product.ProductCateogoryID;
             }
         }
         #endregion
